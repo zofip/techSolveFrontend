@@ -1,0 +1,20 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+  <!-- Identification  -->
+  <mat-form-field>
+    <input matInput [placeholder]="'Identification' | translate" [formControl]="identificationControl">
+    <mat-error *ngIf="identificationControl.hasError('required')">
+      {{ 'IdentificationRequired' | translate }}
+    </mat-error>
+  </mat-form-field>
+  <!-- Spinner -->
+  <div *ngIf="showSpinner">
+    <app-spinner></app-spinner>
+  </div>
+  <!-- Upload and download file -->
+  <div fxLayout="row" fxLayoutGap="10px">
+    <input hidden type="file" (change)="attach($event)" #fileInput>
+    <button mat-raised-button color="primary" [disabled]="identificationControl.hasError('required')" (click)="triggerAttach()"
+      type="submit">{{ 'Attach' | translate }}</button>
+    <a [href]="fileUrl" mat-raised-button color="accent" [download]="fileName" [disabled]="!fileUrl">{{ 'CalculateMove' | translate }}</a>
+  </div>
+</div>

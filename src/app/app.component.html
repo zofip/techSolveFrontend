@@ -1,0 +1,7 @@
+<ng-template #routerMudanza>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-template>
+  <app-navbar-login [project]="'Move' | translate" [contentTemplate]="routerMudanza">
+  </app-navbar-login>

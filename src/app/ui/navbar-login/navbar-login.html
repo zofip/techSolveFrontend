@@ -1,0 +1,17 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <!-- Title -->
+        <button mat-button >{{ project }}</button>
+        <!-- Space -->
+        <div fxFlex></div>
+        <button mat-button>
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-container [ngTemplateOutlet]="contentTemplate"></ng-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>
